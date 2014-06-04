@@ -1,4 +1,0 @@
-KreiselPro
-==========
-
-Protokoll Kreiselpraezession
