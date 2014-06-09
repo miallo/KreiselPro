@@ -45,7 +45,7 @@
 % Zur Graphikausgabe
 %Beipiel: \includegraphics[width=\textwidth]{grafik.png}
 \usepackage{graphicx}
-
+\usepackage{transparent}
 % Text umfließt Graphiken und Tabellen
 % Beispiel:
 % \begin{wrapfigure}[Zeilenanzahl]{"l" oder "r"}{breite}
@@ -89,16 +89,16 @@
 
 %Für chemische Formeln (von www.dante.de)
 %% Anpassung an LaTeX(2e) von Bernd Raichle
-\makeatletter
-\DeclareRobustCommand{\chemical}[1]{%
-  {\(\m@th
-   \edef\resetfontdimens{\noexpand\)%
-       \fontdimen16\textfont2=\the\fontdimen16\textfont2
-       \fontdimen17\textfont2=\the\fontdimen17\textfont2\relax}%
-   \fontdimen16\textfont2=2.7pt \fontdimen17\textfont2=2.7pt
-   \mathrm{#1}%
-   \resetfontdimens}}
-\makeatother
+%\makeatletter
+%\DeclareRobustCommand{\chemical}[1]{%
+%  {\(\m@th
+%   \edef\resetfontdimens{\noexpand\)%
+%       \fontdimen16\textfont2=\the\fontdimen16\textfont2
+%       \fontdimen17\textfont2=\the\fontdimen17\textfont2\relax}%
+%   \fontdimen16\textfont2=2.7pt \fontdimen17\textfont2=2.7pt
+%   \mathrm{#1}%
+%   \resetfontdimens}}
+%\makeatother
 
 
 \begin{document}
@@ -160,36 +160,54 @@ Dies lässt sich analog zu Kreiseln beschreiben.
 \section{Theorie}
 \label{sec:theorie}
 Ein Kreisel ist ein Körper, der an einer Stelle gelagert ist.
-Um diese kann er sich jedoch in allen Richtungen bewegen: z.B. in x- und y-Richtung, aber er kann auch rotieren.
+Um diese kann er sich jedoch in allen Richtungen bewegen: z.B. in $\psi$- und $\vartheta$-Richtung, aber er kann auch um $\varphi$ rotieren.
 Man kann so also erkennen, dass er insgesamt 3 Freiheitsgrade besitzt.
 Um diese zu beschreiben, verwendet man gewöhnlicherweise die eulerschen Winkel.
 Mit ihnen kann man den kompletten Zustand des Systems definieren.\\
+Einen Kreisel, der symmetrisch ist bezüglich der sogenannten Figurenachse ist, welche durch den Befestigungspunkt und den Schwerpunkt verläuft, nennt man einen \emph{symmetrischen Kreisel}.\\
 Man kann nun drei verschiedene Kegel der Kreiselbewegung sehen (s. Abb. \ref{img:kegel}): die Nutation um den Nutationskegel, Präzession um den Gangpolkegel und den Rastpolkegel.\\
-Die Achse des Rastpolkegel bleibt (ohne Einwirkung äußerer Drehmomente) konstant in Richtung der Impulsachse gerichtet.
+Die Achse des Rastpolkegel ist die Richtung der Impulsachse, welche ohne Einwirkung äußerer Drehmomente konstant bleibt.
 Der Gangpolkegel rollt sich mit einer festen Geschwindigkeit um den Rastpolkegel ab und deren Berührungslinie ist die momentane Rotationsachse.
 
 
-\begin{figure}
-\includegraphics{kegel.png}
-\caption{verschiedene Kegel um die ein Kreisel sich bewegen kann\label{img:kegel}}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{kegel.png}
+\caption{verschiedene Kegel um die ein Kreisel sich bewegen kann\protect\footnotemark\label{img:kegel}}
 \end{figure}
-
+\footnotetext{%%%%%%%%%%%%lp.uni-goettingen.de%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
 \subsection{Präzession}
 Ein Kreisel, der waagerecht in der Luft hängt, ohne sich zu drehen, fällt durch die Schwerkraft nach unten.
 Dreht er sich jedoch schnell genug, so beginnt er unter sonst gleichen Umständen, zu rotieren. Diese Bewegung nennt man Präzession.
 Sie wird durch eine Kraft ausgelöst, welche senkrecht zum Drehimpuls $\vec L$ und zu dem daraus resultierenden Drehmoment $\vec M$ wirkt.
 Die Präzessionsgeschwindigkeit $\omega_p$ ist die zeitliche Änderung des Winkels $\varphi$.
+Außerdem gilt $d\varphi=\frac{dL}{L \cdot\sin\theta}=\frac{M\cdot dt}{L \cdot\sin\theta}$
+\begin{align*}
+\Rightarrow\:\omega_p=\frac{d\varphi}{dt}=\frac{M}{L \cdot\sin\theta}
+\end{align*}
+Außerdem gilt wegen $M=\vec{r}\times\vec{F}=m\vec{r}\times\vec{g}=m\cdot rg\sin\theta$ und $L=I\omega_k$ mit der Winkelgeschwindigkeit des Kreisels $\omega_k$
+\begin{align}
+\omega_p=\frac{m\cdot rg}{I\omega_k}
+\end{align}
+
 
 \subsection{Nutation}
+
+ 
+% \subsection{Corioliskraft}
+%Eines der wichtigsten Phänomene der Corioliskraft ist die haupsächliche Windrichtung der globalen Luftströmungen auf der Erde.
+%So ist diese auf der Nordhalbkugel ostwärts, während sie auf der Südhalbkugel dem entgegengerichtet ist.
+
  
 \section{Durchführung}
 \label{sec:durchfuehrung}
 
-
-\begin{figure}
-\includegraphics{bild1.eps}
-\caption{Bezeichnungen der wichtigen Größen\label{img:bild1}}
-\end{figure}
+ \begin{figure}[htb]
+ \centering \def\svgwidth{100pt}
+ \input{bild1.pdf_tex}
+\caption{Bezeichnungen der wichtigen Größen\label{img:wichtigegr}}
+ \end{figure}
 
 
 \section{Auswertung}
