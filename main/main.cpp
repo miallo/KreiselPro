@@ -28,7 +28,7 @@ int main()
     sigmapr=sqrt(sigmapr);
     sigmapl=sqrt(sigmapl);
     Ischwungrad=(((mpges*mpges*9.81*mrad*schwungradr)/(4*M_PI*M_PI))-mrad*schwungradr*schwungradr);
-    cout << sigmapr << "\t" << sigmapl << "\t" << Ischwungrad << endl;
+    cout << sigmapr << " \t" << sigmapl << " \t" << Ischwungrad << endl;
     return 0;
 }
 

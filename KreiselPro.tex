@@ -116,7 +116,7 @@
   Protokoll}\\[0.5cm]
 \rule{\textwidth}{1pt}
 
-\vspace*{3.5cm}
+\vspace*{3cm}
 
 \begin{Large}
 \begin{tabular}{ll}
@@ -194,7 +194,7 @@ Außerdem gilt wegen $M=\vec{r}\times\vec{F}=m\vec{r}\times\vec{g}=m\cdot rg\sin
 
 \subsection{Nutation}
 
- 
+ Die Nutation ist eine
 % \subsection{Corioliskraft}
 %Eines der wichtigsten Phänomene der Corioliskraft ist die haupsächliche Windrichtung der globalen Luftströmungen auf der Erde.
 %So ist diese auf der Nordhalbkugel ostwärts, während sie auf der Südhalbkugel dem entgegengerichtet ist.
@@ -203,7 +203,7 @@ Außerdem gilt wegen $M=\vec{r}\times\vec{F}=m\vec{r}\times\vec{g}=m\cdot rg\sin
 \section{Durchführung}
 \label{sec:durchfuehrung}
 
- \begin{figure}[htb]
+ \begin{figure}[!htb]
  \centering \def\svgwidth{100pt}
  \input{bild1.pdf_tex}
 \caption{Bezeichnungen der wichtigen Größen\label{img:wichtigegr}}
@@ -212,14 +212,55 @@ Außerdem gilt wegen $M=\vec{r}\times\vec{F}=m\vec{r}\times\vec{g}=m\cdot rg\sin
 
 \section{Auswertung}
 \label{sec:auswertung}
+
 \subsection{Pendel}
-Nach dem Versuch \emph{Trägheitsmoment} gilt für das Trägheitsmoment des Schwungrades: $I=\frac{T^2mgz}{4\pi^2}-mz^2$
+Nach dem Versuch 3 (Das Trägheitsmoment) gilt: $$I=\dfrac{T^2gmz}{4\pi^2}-mz^2$$
+Der Fehler wurde mit der Gaußschen Fehlerfortpflanzung berechnet:
+$$\sigma_I=\sqrt{\sigma_T^2\left(\dfrac{\partial I}{\partial T}\right)^2}=\sqrt{\left(\dfrac{\sigma_T\cdot Tmgz}{2\pi^2}\right)^2}$$
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+$T$ [s] & $I$ [$10^{-3}\cdot \text{kg m}^2$] \\ 
+\hline 
+$2.01\pm 0.03$ & $(8.6\pm 0.03)$ \\ 
+\hline 
+$2.03\pm 0.03$ & $(8.8\pm 0.03)$\\ 
+\hline
+$2.03\pm 0.03$ & $(8.8\pm 0.03)$ \\ 
+\hline 
+$2.02\pm 0.03$ & $(8.7\pm 0.03)$ \\ 
+\hline 
+$2.02\pm 0.03$ & $(8.7\pm 0.03)$ \\ 
+\hline 
+$2.02\pm 0.03$ & $(8.7\pm 0.03)$ \\ 
+\hline 
+\end{tabular}
+\caption{Trägheitsmoment des Pendels\label{tab:pendel}}
+\end{table}
+Insgesamt ergibt sich so aus Tabelle \ref{tab:pendel} ein Trägheitsmoment von \(I=(8.7\pm 0.02)\cdot 10^{-3}\text{kg m}^2\).
+
+\subsection{WWWWWWWWWWWWWWWWWWWWWWW}
+Das Trägheitsmoment eines Rades in horizontaler Richtung beträgt $$I_{hor}=\dfrac{1}{2}mr^2$$
+Mit einer Masse m von $1.324$ kg und einem Radius $r=0.1225$m ergibt sich $I_{hor}=9.93\cdot 10^{-3}$kg m$^2$\\
+Das Trägheitsmoment der gesamten Konstruktion errechnet sich aus
+\begin{align}
+I_z&=I_{Ausgl.Gew.}+I_{Stab}+I_{Rad}\\
+&= m_gz_g^2+\dfrac{1}{12}m_sl^2+m_sd_s^2+\dfrac{1}{4}m_rr^2+\dfrac{1}{12}m_rd^2+m_rz_r^2
+\end{align}
+Dies wurde mithilfe des Hebelgesetzes und des Satzes von Steiner, sowie mit der Masse des Ausgleichsgewichts $m_g=0.936$kg, dessen Entfernung zur Drehachse $z_g=(0.17\pm 0.01)$m, der Masse des Stabes $m_s=(0.4\pm 0.2)$kg, seiner Länge $l=(0.48\pm 0.005)$m und dem Abstand seines CM zur Drehachse $d_s=(0.10\pm 0.01)$m berechnet. Außerdem der Masse des Rades $m_r=1.324$kg mit seinem Durchmesser $d$ und dessen Abstand zur Drehachse $z_r=0.12$m. Die Masse des Stabes, welche weder gegeben war, noch vermessen werden konnte, wurde so grob auf $0.4$kg geschätzt.
+Insgesamt ergibt sich $I_z=64.5\cdot 10^{-3}$kg m$^2$
+
+
+
+
 
 \section{Diskussion}
 \label{sec:diskussion}
-Das Gewicht der Stange ließ sich nicht bestimmen, ohne die komplette Apperatur auseinanderzubauen.
+Das Gewicht der Stange ließ sich nicht bestimmen, ohne die komplette Apparatur auseinanderzubauen.
 Dies ist natürlich nicht wünschenswert und so fehlte uns leider dieser Wert zur genaueren Berechnung.
 Ein Vermerk auf der Stange selber oder im Handbuch wäre diesbezüglich hilfreich.
+Auch war die Messung der verschiedenen Abstände nicht immer einfach zu messen, da das Lineal nicht eben anzulegen war.
 
 
 \end{document}
